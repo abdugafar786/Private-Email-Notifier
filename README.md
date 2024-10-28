@@ -10,6 +10,6 @@ However, since I have sent CV to some workplaces,I want to ensure that the impor
 
 
 ## Requirements
-- Python 3.x
+- Python 3.11.6
 - imaplib
 - email
