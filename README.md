@@ -13,3 +13,5 @@ However, since I have sent CV to some workplaces,I want to ensure that the impor
 - Python 3.11.6
 - imaplib
 - email
+
+### I will continue to develop this project
