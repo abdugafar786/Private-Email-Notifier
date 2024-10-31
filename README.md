@@ -21,9 +21,3 @@ However, since I have sent CV to some workplaces,I want to ensure that the impor
 ```env
 EMAIL_ADDRESS=your_email@example.com
 APP_PASSWORD=your_app_password
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> f63267e (add requirements.txt)
