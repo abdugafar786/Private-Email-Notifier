@@ -7,11 +7,19 @@ However, since I have sent CV to some workplaces,I want to ensure that the impor
 - Connects to IMAP email server
 - Checks for unseen emails
 - Filters emails from specific senders
+- Monitors emails from specified senders
+- Sends desktop notifications for important emails
 
 
 ## Requirements
 - Python 3.11.6
 - imaplib
 - email
+- notify-py
 
-### I will continue to develop this project
+### Before starting the project, please create the .env file and add this code
+```env
+EMAIL_ADDRESS=your_email@example.com
+APP_PASSWORD=your_app_password
+
+
