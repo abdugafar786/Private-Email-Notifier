@@ -23,3 +23,7 @@ EMAIL_ADDRESS=your_email@example.com
 APP_PASSWORD=your_app_password
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f63267e (add requirements.txt)
