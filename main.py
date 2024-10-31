@@ -2,6 +2,8 @@ import imaplib
 import email
 from dotenv import load_dotenv
 import os
+from notifypy import Notify
+
 
 load_dotenv()
 
@@ -14,6 +16,7 @@ def control_email(email_address: str, app_password: str) -> None:
         mail = imaplib.IMAP4_SSL('imap.mail.me.com')
         mail.login(email_address, app_password)
         mail.select('inbox')
+        notification = Notify()
 
         status, messages = mail.search(None, 'UNSEEN')
 
@@ -28,11 +31,12 @@ def control_email(email_address: str, app_password: str) -> None:
         mail_ids = messages[0].split() 
         
         for mail_id in mail_ids:
-            
             status, msg_data = mail.fetch(mail_id, "(BODY.PEEK[HEADER])")
             if status == 'OK':
                 msg = email.message_from_bytes(msg_data[0][1]) 
                 if msg['from'] in ['info@zet-mobile.com', 'info@tcell.tj', 'info@megafon.tj'] :
+                    notification.title = f'New Email from: {msg["from"]}'
+                    notification.send()
                     print(f"incoming email: {msg['from']}")
             else:
                 print("An error occurred while retrieving email.")
@@ -43,6 +47,5 @@ def control_email(email_address: str, app_password: str) -> None:
     finally:
         
         mail.logout()
-
 
 control_email(email_address, app_password)
